@@ -7,6 +7,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import vazkii.quark.base.client.gui.FormatUtils;
 import vazkii.quark.base.lib.LibMisc;
 import vazkii.quark.base.module.Feature;
 import vazkii.quark.base.module.ModuleLoader;
@@ -112,7 +113,8 @@ public class GuiConfigImport extends GuiConfigBase {
 			String s;
 			if(disabledFeatures == 1)
 				s = I18n.format("quark.config.disabledcount1");
-			else s = I18n.format("quark.config.disabledcount", disabledFeatures);
+			else s = I18n.format("quark.config.disabledcount",
+					FormatUtils.formatInteger(disabledFeatures));
 			
 			drawCenteredString(mc.fontRenderer, s, x, textField.y + 26, 0x00FF00);
 		}

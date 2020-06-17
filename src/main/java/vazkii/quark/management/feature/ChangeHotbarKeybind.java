@@ -21,6 +21,7 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 import vazkii.arl.network.NetworkHandler;
 import vazkii.quark.base.client.ModKeybinds;
+import vazkii.quark.base.client.gui.FormatUtils;
 import vazkii.quark.base.module.Feature;
 import vazkii.quark.base.network.message.MessageChangeHotbar;
 
@@ -112,7 +113,7 @@ public class ChangeHotbarKeybind extends Feature {
 			}
 
 			for(int i = 0; i < 3; i++)
-				mc.fontRenderer.drawStringWithShadow(TextFormatting.BOLD + Integer.toString(i + 1), xStart - 9, yStart + i * 21 + 7, 0xFFFFFF);
+				mc.fontRenderer.drawStringWithShadow(TextFormatting.BOLD + FormatUtils.formatInteger(i + 1), xStart - 9, yStart + i * 21 + 7, 0xFFFFFF);
 
 			RenderHelper.enableGUIStandardItemLighting();
 

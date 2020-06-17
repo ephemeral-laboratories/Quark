@@ -15,6 +15,7 @@ import net.minecraft.tileentity.TileEntityNote;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 import vazkii.arl.network.NetworkHandler;
+import vazkii.quark.base.client.gui.FormatUtils;
 import vazkii.quark.base.module.ModuleLoader;
 import vazkii.quark.base.network.message.MessageTuneNoteBlock;
 import vazkii.quark.misc.feature.NoteBlockInterface;
@@ -278,7 +279,7 @@ public class GuiNoteBlock extends GuiScreen {
 			int color = Color.HSBtoRGB((24 - clicks) / 24F - 0.6F, 1F, 1F);
 			mc.fontRenderer.drawString(desc, x + w / 2 - sw / 2, y + h - 24, color);
 
-			String s = Integer.toString(clicks);
+			String s = FormatUtils.formatInteger(clicks);
 			sw = mc.fontRenderer.getStringWidth(s);
 			mc.fontRenderer.drawString(s, x + w / 2 - sw / 2, y + h - 13, this instanceof BlackKey ? 0xCCCCCC : 0x333333);
 

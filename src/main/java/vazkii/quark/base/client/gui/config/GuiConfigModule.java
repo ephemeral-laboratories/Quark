@@ -3,6 +3,7 @@ package vazkii.quark.base.client.gui.config;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import vazkii.quark.base.client.gui.FormatUtils;
 import vazkii.quark.base.module.Feature;
 import vazkii.quark.base.module.Module;
 import vazkii.quark.base.module.ModuleLoader;
@@ -104,7 +105,9 @@ public class GuiConfigModule extends GuiConfigBase {
 		if(totalPages > 1) {
 			int x = width / 2;
 			int y = height / 6 - 7;
-			drawCenteredString(mc.fontRenderer, (page + 1) + "/" + totalPages, x, y, 0xFFFFFF);
+			String pageString = FormatUtils.formatInteger(page + 1) + "/" +
+					FormatUtils.formatInteger(totalPages);
+			drawCenteredString(mc.fontRenderer, pageString, x, y, 0xFFFFFF);
 		}
 		
 		if(mayRequireRestart) {

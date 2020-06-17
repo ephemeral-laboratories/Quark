@@ -15,6 +15,7 @@ import net.minecraftforge.fml.client.GuiScrollingList;
 import org.lwjgl.input.Mouse;
 import vazkii.arl.network.NetworkHandler;
 import vazkii.arl.util.ClientTicker;
+import vazkii.quark.base.client.gui.FormatUtils;
 import vazkii.quark.base.lib.LibMisc;
 import vazkii.quark.base.network.message.MessageMatrixEnchanterOperation;
 import vazkii.quark.oddities.client.gui.button.GuiButtonMatrixEnchantingPlus;
@@ -93,7 +94,7 @@ public class GuiMatrixEnchanting extends GuiContainer {
 
 			if(!has && mc.player.experienceLevel < xpMin) {
 				fontRenderer.drawStringWithShadow("!", x + 6, y + 3, 0xFF0000);
-				text = I18n.format("quarkmisc.matrixMin", xpMin);
+				text = I18n.format("quarkmisc.matrixMin", FormatUtils.formatInteger(xpMin));
 			}
 
 			x -= (fontRenderer.getStringWidth(text) - 5);
